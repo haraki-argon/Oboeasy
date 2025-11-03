@@ -133,8 +133,8 @@
 	z-index: 10;
 	color: var(--deepaq);
 	position: absolute;
-	bottom: 25px;
-	left: 25px;
+	top: 25px;
+	right: 25px;
 	font-size: 60px;
 }
 
@@ -142,9 +142,9 @@
 	z-index: 10;
 	color: var(--deepaq);
 	position: absolute;
-	left: 25px;
+	right: 25px;
 	font-size: 20px;
-	bottom: calc(25px + 60px + 10px);
+	top: calc(25px + 60px + 10px);
 }
 
 .write .left #backBtn {
