@@ -133,8 +133,6 @@ canvas.addEventListener('touchend', stopDrawing);
 clearBtn.addEventListener('click', clearCanvas);
 undoBtn.addEventListener('click', undoLastStep);
 
-// 窗口大小改变时重新设置Canvas尺寸
-window.addEventListener('resize', resizeCanvas);
 
 // 初始化Canvas尺寸和画布
 resizeCanvas();
