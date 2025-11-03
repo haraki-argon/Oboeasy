@@ -23,71 +23,29 @@
 				<div class="write">
 					<div class="left">
 						<div>
-							<h1>000</h1>
+							<h1><span id="backBtn"><</span>000</h1>
 							<button id="undoBtn">撤回</button>
 							<button id="clearBtn">クリア</button>
-							<button class="nextBtn">次へ
+							<button id="nextBtn">次へ</button>
+							<button id="checkBtn">チェック</button>
+							<ul>
+								<li id='remember'>覚えた</li>
+								<li id='tochuu'>途中</li>
+								<li id='forgot'>忘れた</li>
+							</ul>
 						</div>
 					</div>
 					<div class="right">
 						<canvas id="drawingCanvas"></canvas>
-						<p>憧憬</p>
+						<p id="hint">憧憬</p>
+						<p id="yomikata">あこがれる</p>
+						<p id="kakikata">憧れる</p>
 					</div>
 				</div>
 			</li>
 		</ol>
 	</body>
+	<script src="js/testn3.js"></script>
 	<script src="js/write.js"></script>
-	<script type="text/javascript">
-		// 移动端Canvas书写优化
-		function optimizeCanvasForMobile(canvas) {
-		    // 阻止页面缩放和下拉刷新
-		    document.addEventListener('touchmove', function(e) {
-		        if (e.scale !== 1) {
-		            e.preventDefault();
-		        }
-		    }, { passive: false });
-		
-		    document.addEventListener('touchstart', function(e) {
-		        if (e.touches.length > 1) {
-		            e.preventDefault();
-		        }
-		    }, { passive: false });
-		
-		    // 阻止双击缩放
-		    let lastTouchEnd = 0;
-		    document.addEventListener('touchend', function(e) {
-		        const now = Date.now();
-		        if (now - lastTouchEnd <= 300) {
-		            e.preventDefault();
-		        }
-		        lastTouchEnd = now;
-		    }, { passive: false });
-		
-		    // 阻止手势缩放
-		    document.addEventListener('gesturestart', function(e) {
-		        e.preventDefault();
-		    });
-		    document.addEventListener('gesturechange', function(e) {
-		        e.preventDefault();
-		    });
-		    document.addEventListener('gestureend', function(e) {
-		        e.preventDefault();
-		    });
-		
-		    // 防止滚动
-		    canvas.addEventListener('touchstart', function(e) {
-		        if (e.target === canvas) {
-		            e.preventDefault();
-		        }
-		    });
-		    canvas.addEventListener('touchmove', function(e) {
-		        if (e.target === canvas) {
-		            e.preventDefault();
-		        }
-		    });
-		}
-		
-		optimizeCanvasForMobile(document.getElementById('drawingCanvas'));
-	</script>
+	<script src="js/oboe.js"></script>
 </html>

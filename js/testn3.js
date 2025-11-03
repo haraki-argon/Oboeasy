@@ -1,10 +1,10 @@
-{
+var n3={
 	"title":"N3単語",
 	"content":[
 		{
 			"word":"愛",
 			"yomikata":"あい",
-			"meaning":"爱情",
+			"meaning":"爱，爱情",
 			"id":"n30001"
 		},
 		{
@@ -157,4 +157,4 @@
 			"meaning":"明天"
 		},
 	]
-}
+};

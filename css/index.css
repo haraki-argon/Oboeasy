@@ -7,6 +7,12 @@
 	--deep: #322;
 	--deepaq: #30202088;
 	--light: #f0e9cd;
+	--good: #9c4;
+	--half: #fb5;
+	--bad: #f54;
+	--good-aq: #90c04088;
+	--half-aq: #f0b05088;
+	--bad-aq: #f0504088;
 }
 
 * {
@@ -114,11 +120,82 @@
 	font-size: 60px;
 }
 
-.right p {
+.right p#hint {
 	z-index: 10;
 	color: var(--deepaq);
 	position: absolute;
 	top: 25px;
 	left: 25px;
 	font-size: 20px;
+}
+
+.right p#kakikata {
+	z-index: 10;
+	color: var(--deepaq);
+	position: absolute;
+	bottom: 25px;
+	left: 25px;
+	font-size: 60px;
+}
+
+.right p#yomikata {
+	z-index: 10;
+	color: var(--deepaq);
+	position: absolute;
+	left: 25px;
+	font-size: 20px;
+	bottom: calc(25px + 60px + 10px);
+}
+
+.write .left #backBtn {
+	background: var(--deep);
+	color: var(--light);
+	display: inline-block;
+	font-size: 40px;
+	line-height: 60px;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	vertical-align: text-top;
+	margin-top: 5px;
+	margin-right: 20px;
+}
+.write .left button{
+	cursor: pointer;
+}
+.write .left button:disabled{
+	background: var(--deepaq);
+}
+.write .left button#checkBtn{
+	background: var(--deep);
+	color: var(--light);
+}
+.write .left ul{
+	list-style: none;
+}
+.write .left ul li{
+	float: left;
+	background: #fff;
+	padding: 30px;
+	margin-top: 20px;
+	margin-right: 20px;
+	transition: background 0.25s;
+}
+.write .left ul li#remember{
+	border-left: 10px solid var(--good);
+}
+.write .left ul li#remember.selected{
+	background: var(--good-aq);
+}
+.write .left ul li#tochuu{
+	border-left: 10px solid var(--half);
+}
+.write .left ul li#tochuu.selected{
+	background: var(--half-aq);
+}
+.write .left ul li#forgot{
+	border-left: 10px solid var(--bad);
+}
+.write .left ul li#forgot.selected{
+	background: var(--bad-aq);
 }
