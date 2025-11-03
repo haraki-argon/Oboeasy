@@ -1,0 +1,140 @@
+// 获取Canvas元素和上下文
+const canvas = document.getElementById('drawingCanvas');
+const ctx = canvas.getContext('2d');
+const undoBtn = document.getElementById('undoBtn');
+const clearBtn = document.getElementById('clearBtn');
+
+// 初始化变量
+let isDrawing = false;
+let lastX = 0;
+let lastY = 0;
+let drawingHistory = [];
+const MAX_HISTORY = 50;
+
+// 设置Canvas尺寸
+function resizeCanvas() {
+	const parent = canvas.parentElement;
+	canvas.width = parent.clientWidth;
+	canvas.height = parent.clientHeight;
+	initializeCanvas();
+}
+
+
+
+// 初始化画布
+function initializeCanvas() {
+	ctx.fillStyle = 'white';
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
+	saveCanvasState();
+	updateUndoButton();
+	// 设置Canvas样式
+	ctx.lineJoin = 'round';
+	ctx.lineCap = 'round';
+	ctx.strokeStyle = 'black';
+	ctx.lineWidth = 4;
+}
+
+// 保存当前画布状态到历史记录
+function saveCanvasState() {
+	if (drawingHistory.length >= MAX_HISTORY) {
+		drawingHistory.shift();
+	}
+	drawingHistory.push(canvas.toDataURL());
+	updateUndoButton();
+}
+
+// 更新撤回按钮状态
+function updateUndoButton() {
+	undoBtn.disabled = drawingHistory.length <= 1;
+}
+
+// 开始绘制
+function startDrawing(e) {
+	isDrawing = true;
+	[lastX, lastY] = getCoordinates(e);
+}
+
+// 绘制中
+function draw(e) {
+	if (!isDrawing) return;
+
+	const [x, y] = getCoordinates(e);
+
+	ctx.beginPath();
+	ctx.moveTo(lastX, lastY);
+	ctx.lineTo(x, y);
+	ctx.stroke();
+
+	[lastX, lastY] = [x, y];
+}
+
+// 停止绘制
+function stopDrawing() {
+	if (isDrawing) {
+		isDrawing = false;
+		saveCanvasState();
+	}
+}
+
+// 获取坐标（处理鼠标和触摸事件）
+function getCoordinates(e) {
+	let x, y;
+
+	if (e.type.includes('touch')) {
+		const rect = canvas.getBoundingClientRect();
+		x = e.touches[0].clientX - rect.left;
+		y = e.touches[0].clientY - rect.top;
+	} else {
+		const rect = canvas.getBoundingClientRect();
+		x = e.clientX - rect.left;
+		y = e.clientY - rect.top;
+	}
+
+	return [x, y];
+}
+
+// 清除画布
+function clearCanvas() {
+	ctx.fillStyle = 'white';
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
+	drawingHistory = [];
+	saveCanvasState();
+}
+
+// 撤回上一步
+function undoLastStep() {
+	if (drawingHistory.length > 1) {
+		drawingHistory.pop();
+
+		const previousState = drawingHistory[drawingHistory.length - 1];
+		const img = new Image();
+		img.onload = function() {
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			ctx.drawImage(img, 0, 0);
+		};
+		img.src = previousState;
+
+		updateUndoButton();
+	}
+}
+
+// 事件监听器
+canvas.addEventListener('mousedown', startDrawing);
+canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('mouseup', stopDrawing);
+canvas.addEventListener('mouseout', stopDrawing);
+
+// 触摸事件支持
+canvas.addEventListener('touchstart', startDrawing);
+canvas.addEventListener('touchmove', draw);
+canvas.addEventListener('touchend', stopDrawing);
+
+// 按钮事件
+clearBtn.addEventListener('click', clearCanvas);
+undoBtn.addEventListener('click', undoLastStep);
+
+// 窗口大小改变时重新设置Canvas尺寸
+window.addEventListener('resize', resizeCanvas);
+
+// 初始化Canvas尺寸和画布
+resizeCanvas();

@@ -1,0 +1,124 @@
+@font-face {
+	font-family: 'SDK_SC_Web';
+	src: url('../zh-cn.ttf');
+}
+
+:root {
+	--deep: #322;
+	--deepaq: #30202088;
+	--light: #f0e9cd;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'SDK_SC_Web';
+	font-weight: normal;
+	color: var(--deep);
+	border-radius: 5px;
+}
+
+.page {
+	list-style: none;
+}
+
+.page>li {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.page li>div {
+	width: 100vw;
+	height: auto;
+	min-height: 100vh;
+	background: var(--light);
+}
+
+.start h1 {
+	font-size: 50px;
+	text-align: center;
+	padding-top: 30vh;
+	padding-left: 50px;
+}
+
+.start h2 {
+	font-size: 20px;
+	width: 110px;
+	background: var(--deep);
+	color: var(--light);
+	display: inline-block;
+	padding: 10px 20px;
+	margin-left: calc(50% - 55px);
+	margin-top: 5px;
+}
+
+.start ul {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+}
+
+.start ul li {
+	float: left;
+	font-size: 20px;
+	background: #fff;
+	padding: 30px 50px;
+	margin: 30px 10px;
+}
+
+.write {
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	/* 防止滚动条 */
+}
+
+.left {
+	width: 30vw;
+	height: 100vh;
+	padding: 25px;
+	box-sizing: border-box;
+	/* 关键：包含padding在宽度内 */
+}
+
+.right {
+	width: 70vw;
+	height: 100vh;
+	background: #fff;
+	box-sizing: border-box;
+	/* 关键：包含padding在宽度内 */
+	position: relative;
+}
+
+.right canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.left button {
+	display: block;
+	width: 50%;
+	font-size: 20px;
+	background: #fff;
+	padding: 30px 20px;
+	border: none;
+	margin-top: 20px;
+}
+
+.left h1 {
+	font-size: 60px;
+}
+
+.right p {
+	z-index: 10;
+	color: var(--deepaq);
+	position: absolute;
+	top: 25px;
+	left: 25px;
+	font-size: 20px;
+}
