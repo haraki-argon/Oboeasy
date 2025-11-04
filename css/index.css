@@ -2,7 +2,10 @@
 	font-family: 'SDK_SC_Web';
 	src: url('../zh-cn.ttf');
 }
-
+@font-face {
+	font-family: 'nihongo';
+	src: url('../GenRyuMin JP TTF Heavy.ttf');
+}
 :root {
 	--deep: #322;
 	--deepaq: #30202088;
@@ -134,8 +137,9 @@
 	color: var(--deepaq);
 	position: absolute;
 	top: 25px;
-	right: 25px;
+	right: 20px;
 	font-size: 60px;
+	font-family: nihongo;
 }
 
 .right p#yomikata {
