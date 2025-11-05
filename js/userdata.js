@@ -1,14 +1,5 @@
 word_bank = []
 task_list = []
-//test-------
-word_bank = [n3, lecture17, xinbiaori_zhong]
-task_list = {
-	"N3単語": [],
-	"第17課": [],
-	"新标日中级": []
-}
-
-//test-------
 getdata()
 wap_callback[2] = (() => {
 	$(".wordbank .bank ul").html('')
@@ -78,77 +69,35 @@ function mastery_v(word_list) {
 	word_list.forEach(x => tot += Math.min(x.pt, 9))
 	return (tot / (word_list.length * 9) * 100).toFixed(1) + '%';
 }
-
 function new_task(title) {
-    // 缓存常用DOM元素
-    const $tasksUl = $('.newtask .tasks ul');
-    const $selNum = $('.newtask .newtask_right span#sel_num');
-    const $taskNameInput = $('#set_task_name');
-    
-    $tasksUl.empty();
-    
-    const $h1 = $('.newtask .tasks h1');
-    $h1.html(`<span id="tasks_backBtn" onclick='wap(2)'><</span>${title}-新規任務`);
-    
-    // 批量构建HTML字符串，一次性插入
-    const words = get_word_bank(title).content;
-    const liHTMLs = words.map(x => `
-        <li wordid='${x.id}'>
-            <span class='col'>●</span>
-            <span class='word'>${x.word}</span>
-            <span class='pt'>習熟度：${x.pt}</span>
-        </li>
-    `);
-    
-    $tasksUl.html(liHTMLs.join(''));
-    
-    $taskNameInput.attr('placeholder', `${title} 任務 ${task_list[title].length + 1}`);
-    
-    // 使用事件委托，避免给每个li绑定事件
-    let selectionCount = 0;
-    
-    $tasksUl.off('click', 'li').on('click', 'li', function() {
-        const $this = $(this);
-        const wasSelected = $this.hasClass('selected');
-        
-        $this.toggleClass('selected');
-        
-        // 直接计数，避免重复查询DOM
-        if (wasSelected) {
-            selectionCount--;
-        } else {
-            selectionCount++;
-        }
-        
-        $selNum.text(selectionCount);
-    });
-    
-    // 初始化计数
-    selectionCount = 0;
-    $selNum.text(selectionCount);
-    
-    // 提交事件
-    const $submitBtn = $('.newtask .newtask_right #newtask_submit');
-    $submitBtn.off('click').on('click', () => {
-        const all_sel_words = [];
-        
-        // 使用jQuery的each
-        $('.newtask .tasks ul li.selected').each(function() {
-            all_sel_words.push($(this).attr('wordid'));
-        });
-        
-        const taskName = $taskNameInput.val() || `${title} 任務 ${task_list[title].length + 1}`;
-        
-        task_list[title].push({
-            "task_title": taskName,
-            "content": all_sel_words
-        });
-        
-        savedata();
-        task_show(title);
-    });
-    
-    wap(4);
+	$('.newtask .tasks ul').html('')
+	$('.newtask .tasks h1').html(`<span id="tasks_backBtn" onclick='wap(2)'><</span>${title}-新規任務`)
+	get_word_bank(title).content.forEach(x => {
+		$('.newtask .tasks ul').append(`<li wordid='${x.id}'>
+								<span class='col'>●</span>
+								<span class='word'>${x.word}</span>
+								<span class='pt'>習熟度：${x.pt}</span>
+							</li>`)
+	})
+	$('#set_task_name').attr('placeholder', (title + " 任務 " + (task_list[title].length + 1)))
+	$('.newtask .tasks ul li').on('click', function() {
+		$(this).toggleClass('selected')
+		$('.newtask .newtask_right span#sel_num').text($('.newtask .tasks ul li.selected').length)
+	})
+	$('.newtask .newtask_right #newtask_submit').on('click', () => {
+		let all_sel_words = []
+		document.querySelectorAll('.newtask .tasks ul li.selected').forEach(x => {
+			all_sel_words.push(x.getAttribute('wordid'))
+		})
+		task_list[title].push({
+			"task_title": $('#set_task_name').val() == '' ? (title + " 任務 " + (task_list[title].length +
+				1)) : $('#set_task_name').val(),
+			"content": all_sel_words
+		})
+		savedata()
+		task_show(title)
+	})
+	wap(4)
 }
 
 function savedata() {
@@ -163,11 +112,12 @@ function getdata() {
 
 
 function reiji(){
-	word_bank = [n3, lecture17, xinbiaori_zhong]
+	word_bank = [n3, lecture17, xinbiaori_zhong,lecture18]
 	task_list = {
 		"N3単語": [],
 		"第17課": [],
-		"新标日中级": []
+		"新标日中级": [],
+		"第18課": []
 	}
 	savedata()
 	//临时用
