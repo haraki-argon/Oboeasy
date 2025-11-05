@@ -8,6 +8,7 @@
 }
 :root {
 	--deep: #322;
+	--deepa: #302020dd;
 	--deepaq: #30202088;
 	--light: #f0e9cd;
 	--good: #9c4;
@@ -37,7 +38,7 @@
 	left: 0;
 }
 
-.page li>div {
+.page>li>div {
 	width: 100vw;
 	height: auto;
 	min-height: 100vh;
@@ -48,18 +49,12 @@
 	font-size: 50px;
 	text-align: center;
 	padding-top: 30vh;
-	padding-left: 50px;
 }
 
 .start h2 {
 	font-size: 20px;
-	width: 110px;
-	background: var(--deep);
-	color: var(--light);
-	display: inline-block;
-	padding: 10px 20px;
-	margin-left: calc(50% - 55px);
-	margin-top: 5px;
+	text-align: center;
+	color: var(--deepaq);
 }
 
 .start ul {
@@ -202,4 +197,204 @@
 }
 .write .left ul li#forgot.selected{
 	background: var(--bad-aq);
+}
+
+.wordbank .bank{
+	height: calc(80vh - 60px);
+	width: calc(88vw - 60px);
+	margin: 0 auto;
+	position: relative;
+	top:10vh;
+	padding: 30px;
+	background: #fff;
+}
+.wordbank .bank #bank_backBtn {
+	background: var(--deep);
+	color: #fff;
+	display: inline-block;
+	font-size: 30px;
+	line-height: 40px;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	vertical-align: text-top;
+	margin-top: 4px;
+	margin-right: 20px;
+}
+.wordbank .bank h1 {
+	font-size: 40px;
+}
+.wordbank ul{
+	list-style: none;
+	margin-top: 20px;
+}
+.wordbank ul li{
+	float: left;
+	width: 24%;
+	margin-right: 1%;
+}
+.wordbank ul li>div{
+	width: 100%;
+	height: 200px;
+	background: var(--light);
+	padding: 20px;
+	box-sizing: border-box;
+	position: relative;
+}
+.wordbank ul li div h2{
+	font-size: 30px;
+}
+.wordbank ul li div .info{
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+}
+.wordbank ul li div .info h3,.wordbank ul li div .info span{
+	color: var(--deepa);
+}
+
+.tasklist .tasks{
+	height: calc(80vh - 60px);
+	width: calc(88vw - 60px);
+	margin: 0 auto;
+	position: relative;
+	top:10vh;
+	padding: 30px;
+	background: #fff;
+}
+.tasklist .tasks #tasks_backBtn {
+	background: var(--deep);
+	color: #fff;
+	display: inline-block;
+	font-size: 30px;
+	line-height: 40px;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	vertical-align: text-top;
+	margin-top: 4px;
+	margin-right: 20px;
+}
+.tasklist .tasks h1 {
+	font-size: 40px;
+}
+.tasklist ul{
+	list-style: none;
+	margin-top: 20px;
+}
+.tasklist ul li{
+	float: left;
+	width: 24%;
+	margin-right: 1%;
+}
+.tasklist ul li>div{
+	width: 100%;
+	height: 200px;
+	background: var(--light);
+	padding: 20px;
+	box-sizing: border-box;
+	position: relative;
+}
+.tasklist ul li div h2{
+	font-size: 30px;
+}
+.tasklist ul li div .info{
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+}
+.tasklist ul li div .info h3,.tasklist ul li div .info span{
+	color: var(--deepa);
+}
+.tasklist h1 button{
+	height:40px;
+	font-size: 20px;
+	color: #fff;
+	background: var(--deep);
+	vertical-align: middle;
+	padding: 5px 20px;
+}
+
+.newtask .tasks{
+	height: calc(80vh - 60px);
+	width: calc(88vw - 60px);
+	margin: 0 auto;
+	position: relative;
+	top:10vh;
+	padding: 30px;
+	background: #fff;
+}
+.newtask .tasks #tasks_backBtn {
+	background: var(--deep);
+	color: #fff;
+	display: inline-block;
+	font-size: 30px;
+	line-height: 40px;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	vertical-align: text-top;
+	margin-top: 4px;
+	margin-right: 20px;
+}
+.newtask .tasks h1 {
+	font-size: 40px;
+}
+.newtask .tasks ul{
+	list-style: none;
+	height: calc(100% - 60px);
+	background: var(--light);
+	width: 40%;
+	box-sizing: border-box;
+	padding: 25px;
+	margin-top: 20px;
+	display: inline-block;
+	overflow-y: scroll;
+}
+.newtask .tasks ul li{
+	font-size: 20px;
+	background: #fff;
+	margin-bottom: 8px;
+	padding: 8px;
+	cursor: pointer;
+}
+.newtask .tasks ul li.selected{
+	font-size: 20px;
+	background: var(--deep);
+	margin-bottom: 8px;
+	padding: 8px;
+}
+.newtask .tasks ul li.selected span{
+	color: #fff;
+}
+.newtask .tasks ul li span.pt{
+	float: right;
+}
+.newtask .tasks .newtask_right{
+	width: 50%;
+	display: inline-block;
+	height: calc(100% - 60px);
+	box-sizing: border-box;
+	padding: 25px;
+	vertical-align: top;
+	font-size:  20px;
+	line-height: 35px;
+}
+.newtask .tasks .newtask_right input{
+	font-size: 20px;
+	height: 30px;
+	text-align: center;
+	margin: 0 5px;
+}
+.newtask .tasks .newtask_right p{
+	margin-bottom: 10px;
+}
+.newtask .tasks .newtask_right button{
+	height: 40px;
+	font-size: 20px;
+	padding: 0px 20px;
+	background: var(--deep);
+	color: #fff;
+	border: none;
+	cursor: pointer;
 }

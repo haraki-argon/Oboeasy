@@ -5,6 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 		<title>覚Easy</title>
 		<link rel="stylesheet" href="css/index.css">
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+		</script>
 	</head>
 	<body>
 		<ol class="page">
@@ -13,9 +15,9 @@
 					<h1>覚えましょう！</h1>
 					<h2>テスト　０.１</h2>
 					<ul>
-						<li>任務</li>
-						<li>単語</li>
-						<li>データ</li>
+						<li id='goto_task' onclick='wap(2)'>任務</li>
+						<li id='goto_word' onclick='wap(1)'>単語</li>
+						<li id='goto_data' onclick='reiji()'>データ</li>
 					</ul>
 				</div>
 			</li>
@@ -23,7 +25,7 @@
 				<div class="write">
 					<div class="left">
 						<div>
-							<h1><span id="backBtn"><</span><span id='num'>000</span></h1>
+							<h1><span id="backBtn" onclick='wap(0)'><</span><span id='num'>000</span></h1>
 							<button id="undoBtn">撤回</button>
 							<button id="clearBtn">クリア</button>
 							<button id="nextBtn">次へ</button>
@@ -43,9 +45,54 @@
 					</div>
 				</div>
 			</li>
+			<li>
+				<div class="wordbank"><!-- 进入任务之前，先选择词库 -->
+					<div class="bank">
+						<h1><span id="bank_backBtn" onclick='wap(0)'><</span>語彙集選択</h1>
+						<ul></ul>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="tasklist">
+					<div class="tasks">
+						<h1><span id="tasks_backBtn" onclick='wap(2)'><</span>タイトル-任務<button>+新規</button></h1>
+						<ul></ul>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="newtask">
+					<div class="tasks">
+						<h1><span id="tasks_backBtn" onclick='wap(2)'><</span>タイトル-新規任務</h1>
+						<ul>
+						</ul>
+						<div class="newtask_right">
+							<p><button id='sort_by_pt'>習熟度順</button></p>
+							<p><span id='sel_num'>0</span> 個単語を選んだ</p>
+							<p>便利選択： <input type="text"> 習熟度以下で、<input type="text">個以下の単語を選ぶ <button id='fast_select'>行こう</button></p>
+							<p>任務名設定<input type="text" id='set_task_name'></p>
+							<button id='newtask_submit'>完成</button>
+						</div>
+					</div>
+				</div>
+			</li>
 		</ol>
 	</body>
+	<script type="text/javascript">
+		var wap_callback=[]
+		document.querySelectorAll('ol.page>li')
+			.forEach(()=>wap_callback.push(()=>{}))
+		function wap(n){
+			wap_callback[n]();
+			$('ol.page>li').eq(n).fadeIn("fast").siblings().fadeOut("fast")
+		}
+		wap(0)
+		wap(0)
+	</script>
+	
 	<script src="js/testn3.js"></script>
 	<script src="js/write.js"></script>
 	<script src="js/oboe.js"></script>
+	<script src="js/userdata.js"></script>
 </html>
