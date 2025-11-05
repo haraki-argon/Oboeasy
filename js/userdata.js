@@ -84,7 +84,7 @@ function new_task(title) {
 		$(this).toggleClass('selected')
 		$('.newtask .newtask_right span#sel_num').text($('.newtask .tasks ul li.selected').length)
 	})
-	$('.newtask .newtask_right #newtask_submit').on('click', () => {
+	document.querySelector('.newtask .newtask_right #newtask_submit').onclick=() => {
 		let all_sel_words = []
 		document.querySelectorAll('.newtask .tasks ul li.selected').forEach(x => {
 			all_sel_words.push(x.getAttribute('wordid'))
@@ -96,7 +96,7 @@ function new_task(title) {
 		})
 		savedata()
 		task_show(title)
-	})
+	}
 	wap(4)
 }
 
