@@ -17,7 +17,7 @@
 					<ul>
 						<li id='goto_task' onclick='wap(2)'>課題</li>
 						<li id='goto_word' onclick='wap(5)'>単語</li>
-						<li id='goto_data' onclick='reiji()'>データ</li>
+						<li id='goto_data' onclick='reiji()'>データ初期化</li>
 					</ul>
 				</div>
 			</li>
@@ -105,7 +105,7 @@
 			wap_callback[n]();
 			$('ol.page>li').eq(n).fadeIn("fast").siblings().fadeOut("fast")
 		}
-		wap(5)
+		wap(0)
 	</script>
 	
 	<script src="js/testn3.js"></script>

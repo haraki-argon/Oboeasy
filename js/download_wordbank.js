@@ -64,4 +64,15 @@ function goon_download(n){
 	$('.download_right p.title').text(data_list_json[n].title)
 	$('.download_right p.detail').text(data_list_json[n].detail)
 	$('.download_right p.word_number').text("単語数："+data_list_json[n].word_number)
+	$('.download_right #download_submitBtn')[0].onclick=()=>{
+		fetchdata('https://haraki-argon.github.io/Oboeasy/data/'+data_list_json[n].filename)
+		.then(content=>{
+			let content_struct=JSON.parse(content)
+			word_bank.push(content_struct)
+			task_list[content_struct.title]=[]
+			savedata()
+			wap(2)
+		})
+		
+	}
 }

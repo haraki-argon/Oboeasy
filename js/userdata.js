@@ -13,12 +13,8 @@ function getdata() {
 
 
 function reiji() {
-	word_bank = [n3, lecture17, xinbiaori_zhong, lecture18]
+	word_bank = []
 	task_list = {
-		"N3単語": [],
-		"第17課": [],
-		"新标日中级": [],
-		"第18課": []
 	}
 	savedata()
 	//临时用

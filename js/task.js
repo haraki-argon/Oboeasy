@@ -75,8 +75,8 @@ function new_task(title) {
 	get_word_bank(title).content.forEach(x => {
 		$('.newtask .tasks ul').append(`<li wordid='${x.id}' wordpt='${x.pt}'>
 								<span class='col'>●</span>
-								<span class='word'>${x.word}</span>習熟度：
-								<span class='pt'>${x.pt}</span>
+								<span class='word'>${x.word}</span>
+								<span class='pt'>習熟度：${x.pt}</span>
 							</li>`)
 	})
 	$('#set_task_name').attr('placeholder', (title + " 課題 " + (task_list[title].length + 1)))
