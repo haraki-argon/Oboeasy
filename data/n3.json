@@ -1,160 +1,219 @@
 {
-	"title":"N3単語",
-	"content":[
-		{
-			"word":"愛",
-			"yomikata":"あい",
-			"meaning":"爱情",
-			"id":"n30001"
-		},
-		{
-			"word":"愛情",
-			"yomikata":"あいじょう",
-			"meaning":"爱情"
-		},
-		{
-			"word":"アイス",
-			"yomikata":"アイス",
-			"meaning":"冰",
-			"example":"アイスコーヒー"
-		},
-		{
-			"word":"彼奴",
-			"yomikata":"あいつ",
-			"meaning":"那家伙"
-		},
-		{
-			"word":"相手",
-			"yomikata":"あいて",
-			"meaning":"伙伴，同事，对手"
-		},
-		{
-			"word":"アイデア／アイディア",
-			"yomikata":"アイデア／アイディア",
-			"meaning":"想法"
-		},
-		{
-			"word":"生憎",
-			"yomikata":"あいにく",
-			"meaning":"不凑巧"
-		},
-		{
-			"word":"曖昧",
-			"yomikata":"あいまい",
-			"meaning":"含糊不清，模棱两可"
-		},
-		{
-			"word":"アイロン",
-			"yomikata":"アイロン",
-			"meaning":"熨斗",
-			"example":"アイロンをかける"
-		},
-		{
-			"word":"青空",
-			"yomikata":"あおぞら",
-			"meaning":"蓝天"
-		},
-		{
-			"word":"赤字",
-			"yomikata":"あかじ",
-			"meaning":"赤字，亏空"
-		},
-		{
-			"word":"明かり",
-			"yomikata":"あかり",
-			"meaning":"灯，光，希望"
-		},
-		{
-			"word":"上がる",
-			"yomikata":"あがる",
-			"meaning":"上，登，上学，提高，长进"
-		},
-		{
-			"word":"明らか",
-			"yomikata":"あきらか",
-			"meaning":"明显（二类形容词）"
-		},
-		{
-			"word":"諦める",
-			"yomikata":"あきらめる",
-			"meaning":"放弃，死心"
-		},
-		{
-			"word":"飽きる",
-			"yomikata":"あきる",
-			"meaning":"厌倦，厌烦"
-		},
-		{
-			"word":"アクション",
-			"yomikata":"アクション",
-			"meaning":"动作，活动"
-		},
-		{
-			"word":"アクセント",
-			"yomikata":"アクセント",
-			"meaning":"口音"
-		},
-		{
-			"word":"欠伸",
-			"yomikata":"あくび",
-			"meaning":"哈欠"
-		},
-		{
-			"word":"あける",
-			"yomikata":"あける",
-			"meaning":"天亮，新年伊始，时期结束"
-		},
-		{
-			"word":"上げる",
-			"yomikata":"あげる",
-			"meaning":"举，抬，提高，增加"
-		},
-		{
-			"word":"揚げる",
-			"yomikata":"あげる",
-			"meaning":"放，举起，油炸"
-		},
-		{
-			"word":"憧れる",
-			"yomikata":"あこがれる",
-			"meaning":"憧憬"
-		},
-		{
-			"word":"朝晩",
-			"yomikata":"あさばん",
-			"meaning":"早晚"
-		},
-		{
-			"word":"朝日",
-			"yomikata":"あさひ",
-			"meaning":"旭日"
-		},
-		{
-			"word":"朝飯",
-			"yomikata":"あさめし",
-			"meaning":"早饭",
-			"example":"朝飯前：轻而易举"
-		},
-		{
-			"word":"足音",
-			"yomikata":"あしおと",
-			"meaning":"脚步声"
-		},
-		{
-			"word":"味見",
-			"yomikata":"あじみ",
-			"meaning":"尝味道"
-		},
-		{
-			"word":"足元",
-			"yomikata":"あしもと",
-			"meaning":"脚下",
-			"example":"足元の火がつく：大难临头"
-		},
-		{
-			"word":"明日",
-			"yomikata":"あす",
-			"meaning":"明天"
-		},
-	]
+    "title": "N3単語",
+    "content": [
+        {
+            "word": "愛",
+            "yomikata": "あい",
+            "meaning": "爱，爱情",
+            "id": "N3単語_0",
+            "pt": 0
+        },
+        {
+            "word": "愛情",
+            "yomikata": "あいじょう",
+            "meaning": "爱情",
+            "id": "N3単語_1",
+            "pt": 0
+        },
+        {
+            "word": "アイス",
+            "yomikata": "アイス",
+            "meaning": "冰",
+            "example": "アイスコーヒー",
+            "id": "N3単語_2",
+            "pt": 0
+        },
+        {
+            "word": "彼奴",
+            "yomikata": "あいつ",
+            "meaning": "那家伙",
+            "id": "N3単語_3",
+            "pt": 0
+        },
+        {
+            "word": "相手",
+            "yomikata": "あいて",
+            "meaning": "伙伴，同事，对手",
+            "id": "N3単語_4",
+            "pt": 0
+        },
+        {
+            "word": "アイデア／アイディア",
+            "yomikata": "アイデア／アイディア",
+            "meaning": "想法",
+            "id": "N3単語_5",
+            "pt": 0
+        },
+        {
+            "word": "生憎",
+            "yomikata": "あいにく",
+            "meaning": "不凑巧",
+            "id": "N3単語_6",
+            "pt": 0
+        },
+        {
+            "word": "曖昧",
+            "yomikata": "あいまい",
+            "meaning": "含糊不清，模棱两可",
+            "id": "N3単語_7",
+            "pt": 0
+        },
+        {
+            "word": "アイロン",
+            "yomikata": "アイロン",
+            "meaning": "熨斗",
+            "example": "アイロンをかける",
+            "id": "N3単語_8",
+            "pt": 0
+        },
+        {
+            "word": "青空",
+            "yomikata": "あおぞら",
+            "meaning": "蓝天",
+            "id": "N3単語_9",
+            "pt": 0
+        },
+        {
+            "word": "赤字",
+            "yomikata": "あかじ",
+            "meaning": "赤字，亏空",
+            "id": "N3単語_10",
+            "pt": 0
+        },
+        {
+            "word": "明かり",
+            "yomikata": "あかり",
+            "meaning": "灯，光，希望",
+            "id": "N3単語_11",
+            "pt": 0
+        },
+        {
+            "word": "上がる",
+            "yomikata": "あがる",
+            "meaning": "上，登，上学，提高，长进",
+            "id": "N3単語_12",
+            "pt": 0
+        },
+        {
+            "word": "明らか",
+            "yomikata": "あきらか",
+            "meaning": "明显（二类形容词）",
+            "id": "N3単語_13",
+            "pt": 0
+        },
+        {
+            "word": "諦める",
+            "yomikata": "あきらめる",
+            "meaning": "放弃，死心",
+            "id": "N3単語_14",
+            "pt": 0
+        },
+        {
+            "word": "飽きる",
+            "yomikata": "あきる",
+            "meaning": "厌倦，厌烦",
+            "id": "N3単語_15",
+            "pt": 0
+        },
+        {
+            "word": "アクション",
+            "yomikata": "アクション",
+            "meaning": "动作，活动",
+            "id": "N3単語_16",
+            "pt": 0
+        },
+        {
+            "word": "アクセント",
+            "yomikata": "アクセント",
+            "meaning": "口音",
+            "id": "N3単語_17",
+            "pt": 0
+        },
+        {
+            "word": "欠伸",
+            "yomikata": "あくび",
+            "meaning": "哈欠",
+            "id": "N3単語_18",
+            "pt": 0
+        },
+        {
+            "word": "あける",
+            "yomikata": "あける",
+            "meaning": "天亮，新年伊始，时期结束",
+            "id": "N3単語_19",
+            "pt": 0
+        },
+        {
+            "word": "上げる",
+            "yomikata": "あげる",
+            "meaning": "举，抬，提高，增加",
+            "id": "N3単語_20",
+            "pt": 0
+        },
+        {
+            "word": "揚げる",
+            "yomikata": "あげる",
+            "meaning": "放，举起，油炸",
+            "id": "N3単語_21",
+            "pt": 0
+        },
+        {
+            "word": "憧れる",
+            "yomikata": "あこがれる",
+            "meaning": "憧憬",
+            "id": "N3単語_22",
+            "pt": 0
+        },
+        {
+            "word": "朝晩",
+            "yomikata": "あさばん",
+            "meaning": "早晚",
+            "id": "N3単語_23",
+            "pt": 0
+        },
+        {
+            "word": "朝日",
+            "yomikata": "あさひ",
+            "meaning": "旭日",
+            "id": "N3単語_24",
+            "pt": 0
+        },
+        {
+            "word": "朝飯",
+            "yomikata": "あさめし",
+            "meaning": "早饭",
+            "example": "朝飯前：轻而易举",
+            "id": "N3単語_25",
+            "pt": 0
+        },
+        {
+            "word": "足音",
+            "yomikata": "あしおと",
+            "meaning": "脚步声",
+            "id": "N3単語_26",
+            "pt": 0
+        },
+        {
+            "word": "味見",
+            "yomikata": "あじみ",
+            "meaning": "尝味道",
+            "id": "N3単語_27",
+            "pt": 0
+        },
+        {
+            "word": "足元",
+            "yomikata": "あしもと",
+            "meaning": "脚下",
+            "example": "足元の火がつく：大难临头",
+            "id": "N3単語_28",
+            "pt": 0
+        },
+        {
+            "word": "明日",
+            "yomikata": "あす",
+            "meaning": "明天",
+            "id": "N3単語_29",
+            "pt": 0
+        }
+    ]
 }

@@ -286,6 +286,7 @@
 	float: left;
 	width: 24%;
 	margin-right: 1%;
+	margin-top:1%;
 }
 .tasklist ul li>div{
 	width: 100%;
@@ -397,4 +398,75 @@
 	color: #fff;
 	border: none;
 	cursor: pointer;
+}
+
+
+.download .worddata{
+	height: calc(80vh - 60px);
+	width: calc(88vw - 60px);
+	margin: 0 auto;
+	position: relative;
+	top:10vh;
+	padding: 30px;
+	background: #fff;
+}
+.download .worddata #download_backBtn {
+	background: var(--deep);
+	color: #fff;
+	display: inline-block;
+	font-size: 30px;
+	line-height: 40px;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	vertical-align: text-top;
+	margin-top: 4px;
+	margin-right: 20px;
+}
+.download .worddata h1 {
+	font-size: 40px;
+}
+.download .worddata ul{
+	list-style: none;
+	height: calc(100% - 60px);
+	background: var(--light);
+	width: 100%;
+	box-sizing: border-box;
+	padding: 25px;
+	margin-top: 10px;
+	display: inline-block;
+	overflow-y: scroll;
+}
+.download_left{
+	width: 40%;
+	display: inline-block;
+}
+.download_left input{
+	display: inline-block;
+	font-size: 20px;
+	height: 30px;
+	text-align: left;
+	padding:  0 10px;
+	margin-top: 10px;
+	width: calc(100% - 70px - 20px - 5px - 5px);
+}
+.download_right{
+	width: 56%;
+	height: auto;
+	display: inline-block;
+	vertical-align: top;
+}
+#download_goishu_searchBtn{
+	font-size: 20px;
+	height: 32px;
+	text-align: left;
+	padding:  0px 10px;
+	line-height: 30px;
+	margin-left: 5px;
+	width: 70px;
+	text-align: center;
+	display: inline-block;
+	border: none;
+	background: var(--deep);
+	color: #fff;
 }
