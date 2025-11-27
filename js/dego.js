@@ -57,11 +57,25 @@ function waitForEnter() {
 		document.addEventListener('keydown', handler);
 	});
 }
-
-async function degoList(title) {
+function isOnlyKanaAndSymbols(str) {
+    const kanaAndSymbolsRegex = /^[\u3040-\u309F\u30A0-\u30FF\u3000-\u303F\uFF00-\uFFEF\s]*$/;
+    return kanaAndSymbolsRegex.test(str);
+}
+async function degoList(title,random=true) {
 	let list=get_word_bank(title).content;
+	let ava_list=[]
+	if(random==true){
+		for (let i = 0; i < list.length; i++) {
+			word=list[i]
+			if(isOnlyKanaAndSymbols(word.word))continue;
+			ava_list.push(word)
+		}
+		ava_list.sort(()=> Math.random()-0.5)
+		list=ava_list
+	}
 	for (let i = 0; i < list.length; i++) {
 		word=list[i]
+		if(isOnlyKanaAndSymbols(word.word))continue;
 		await degoWord(word)
 		await waitForEnter()
 	}
