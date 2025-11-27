@@ -2,7 +2,8 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 		<title>覚Easy</title>
 		<link rel="stylesheet" href="css/index.css">
 		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
@@ -10,7 +11,8 @@
 	</head>
 	<body>
 		<ol class="page">
-			<li> <!-- 0 -->
+			<li>
+				<!-- 0 -->
 				<div class="start">
 					<h1>覚えましょう！</h1>
 					<h2>テスト　０.１</h2>
@@ -21,11 +23,13 @@
 					</ul>
 				</div>
 			</li>
-			<li> <!-- 1 -->
+			<li>
+				<!-- 1 -->
 				<div class="write">
 					<div class="left">
 						<div>
-							<h1><span id="backBtn" onclick='wap(0)'><</span><span id='num'>000</span></h1>
+							<h1><span id="backBtn" onclick='wap(0)'>
+									&lt;</span><span id='num'>000</span></h1>
 							<button id="undoBtn">撤回</button>
 							<button id="clearBtn">クリア</button>
 							<button id="nextBtn">次へ</button>
@@ -45,42 +49,60 @@
 					</div>
 				</div>
 			</li>
-			<li> <!-- 2 -->
-				<div class="wordbank"><!-- 进入任务之前，先选择词库 -->
-					<div class="bank">
-						<h1><span id="bank_backBtn" onclick='wap(0)'><</span>語彙集選択</h1>
+			<li>
+				<!-- 2 -->
+				<div class="wordbank">
+					<!-- 进入任务之前，先选择词库 -->
+					<div class="bank panel">
+						<h1 class="panelTitle">
+							<span id="bank_backBtn" class="backBtn" onclick='wap(0)'>&lt;</span>
+							<span class="replacement">語彙集</span>
+						</h1>
 						<ul></ul>
 					</div>
 				</div>
 			</li>
-			<li> <!-- 3 -->
+			<li>
+				<!-- 3 -->
 				<div class="tasklist">
-					<div class="tasks">
-						<h1><span id="tasks_backBtn" onclick='wap(2)'><</span>タイトル-課題<button>+新規</button></h1>
+					<div class="tasks panel">
+						<h1 class="panelTitle">
+							<span id="tasks_backBtn" class="backBtn" onclick='wap(2)'>&lt;</span>
+							<span class="replacement">タイトル-課題</span>
+							<button id='newTaskBtn'>+新規</button>
+							<button id='gameBtn'>漢字でgo!</button>
+						</h1>
 						<ul></ul>
 					</div>
 				</div>
 			</li>
-			<li> <!-- 4 -->
+			<li>
+				<!-- 4 -->
 				<div class="newtask">
-					<div class="tasks">
-						<h1><span id="tasks_backBtn" onclick='wap(2)'><</span>タイトル-課題の新規作成</h1>
+					<div class="tasks panel">
+						<h1 class="panelTitle">
+							<span id="tasks_backBtn" class="backBtn" onclick='wap(2)'>&lt;</span><span
+								class="replacement">タイトル-課題の新規作成</span>
+						</h1>
 						<ul>
 						</ul>
 						<div class="newtask_right">
 							<p><button id='sort_by_pt'>習熟度順</button>　<button id='sort_by_50on'>五十音順</button></p>
 							<p><span id='sel_num'>0</span> 個単語を抽出した</p>
-							<p>習熟度が<input type="text" id="newtask_mastery_limit">以下の単語から<input type="text" id="newtask_number_limit">語を抽出する <button id='fast_select'>抽出する</button></p>
+							<p>習熟度が<input type="text" id="newtask_mastery_limit">以下の単語から<input type="text"
+									id="newtask_number_limit">語を抽出する <button id='fast_select'>抽出する</button></p>
 							<p>課題名を設定<input type="text" id='set_task_name'></p>
 							<button id='newtask_submit'>設定を完了</button>
 						</div>
 					</div>
 				</div>
 			</li>
-			<li> <!-- 5 -->
+			<li>
+				<!-- 5 -->
 				<div class="download">
-					<div class="worddata">
-						<h1><span id="download_backBtn" onclick='wap(0)'><</span>語彙集リスト</h1>
+					<div class="worddata panel">
+						<h1 class="panelTitle"><span id="download_backBtn" class="backBtn" onclick='wap(0)'>
+								&lt;</span>語彙集リスト</h1>
 						<div class="download_left">
 							<input type="text" placeholder="語彙集の名前"><button id="download_goishu_searchBtn">検索</button>
 							<ul></ul>
@@ -95,23 +117,50 @@
 					</div>
 				</div>
 			</li>
+			<li>
+				<!-- 6 -->
+				<div class="modify_task">
+					<div class="panel">
+						<h1 class="panelTitle"><span id="download_backBtn" class="backBtn" onclick='wap(0)'>
+								&lt;</span>課題の変更</h1>
+						<p>名前変更：<input type="text"></p>
+						<button>変更完了</button>
+						<button>課題を削除</button>
+					</div>
+				</div>
+			</li>
+			<li>
+				<!-- 7 -->
+				<div class="dego">
+					<img src="img/bomb.gif" alt="">
+					<div>
+						<h1>来る単語</h1>
+						<input type="text">
+						<div class="kaisetsu">
+							
+						</div>
+					</div>
+				</div>
+			</li>
 		</ol>
 	</body>
 	<script type="text/javascript">
-		var wap_callback=[]
+		var wap_callback = []
 		document.querySelectorAll('ol.page>li')
-			.forEach(()=>wap_callback.push(()=>{}))
-		function wap(n){
+			.forEach(() => wap_callback.push(() => {}))
+
+		function wap(n) {
 			wap_callback[n]();
 			$('ol.page>li').eq(n).fadeIn("fast").siblings().fadeOut("fast")
 		}
 		wap(0)
 	</script>
-	
+
 	<script src="js/testn3.js"></script>
 	<script src="js/write.js"></script>
 	<script src="js/oboe.js"></script>
 	<script src="js/task.js"></script>
 	<script src="js/userdata.js"></script>
 	<script src="js/download_wordbank.js"></script>
+	<script src="js/dego.js"></script>
 </html>

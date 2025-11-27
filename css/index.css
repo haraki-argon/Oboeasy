@@ -78,7 +78,6 @@
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
-	/* 防止滚动条 */
 }
 
 .left {
@@ -86,7 +85,6 @@
 	height: 100vh;
 	padding: 25px;
 	box-sizing: border-box;
-	/* 关键：包含padding在宽度内 */
 }
 
 .right {
@@ -94,7 +92,6 @@
 	height: 100vh;
 	background: #fff;
 	box-sizing: border-box;
-	/* 关键：包含padding在宽度内 */
 	position: relative;
 }
 
@@ -212,7 +209,7 @@
 	background: var(--bad-aq);
 }
 
-.wordbank .bank {
+.panel {
 	height: calc(80vh - 60px);
 	width: calc(88vw - 60px);
 	margin: 0 auto;
@@ -222,7 +219,7 @@
 	background: #fff;
 }
 
-.wordbank .bank #bank_backBtn {
+.panel .backBtn {
 	background: var(--deep);
 	color: #fff;
 	display: inline-block;
@@ -233,10 +230,13 @@
 	text-align: center;
 	vertical-align: text-top;
 	margin-top: 4px;
-	margin-right: 20px;
 }
 
-.wordbank .bank h1 {
+.panel h1.panelTitle {
+	font-size: 40px;
+}
+
+.panel h1.panelTitle span.replacement {
 	font-size: 40px;
 }
 
@@ -269,6 +269,7 @@
 	position: absolute;
 	bottom: 20px;
 	left: 20px;
+	font-size: 14px;
 }
 
 .wordbank ul li div .info h3,
@@ -276,33 +277,6 @@
 	color: var(--deepa);
 }
 
-.tasklist .tasks {
-	height: calc(80vh - 60px);
-	width: calc(88vw - 60px);
-	margin: 0 auto;
-	position: relative;
-	top: 10vh;
-	padding: 30px;
-	background: #fff;
-}
-
-.tasklist .tasks #tasks_backBtn {
-	background: var(--deep);
-	color: #fff;
-	display: inline-block;
-	font-size: 30px;
-	line-height: 40px;
-	width: 40px;
-	height: 40px;
-	text-align: center;
-	vertical-align: text-top;
-	margin-top: 4px;
-	margin-right: 20px;
-}
-
-.tasklist .tasks h1 {
-	font-size: 40px;
-}
 
 .tasklist ul {
 	list-style: none;
@@ -350,33 +324,6 @@
 	padding: 5px 20px;
 }
 
-.newtask .tasks {
-	height: calc(80vh - 60px);
-	width: calc(88vw - 60px);
-	margin: 0 auto;
-	position: relative;
-	top: 10vh;
-	padding: 30px;
-	background: #fff;
-}
-
-.newtask .tasks #tasks_backBtn {
-	background: var(--deep);
-	color: #fff;
-	display: inline-block;
-	font-size: 30px;
-	line-height: 40px;
-	width: 40px;
-	height: 40px;
-	text-align: center;
-	vertical-align: text-top;
-	margin-top: 4px;
-	margin-right: 20px;
-}
-
-.newtask .tasks h1 {
-	font-size: 40px;
-}
 
 .newtask .tasks ul {
 	list-style: none;
@@ -445,34 +392,6 @@
 	cursor: pointer;
 }
 
-
-.download .worddata {
-	height: calc(80vh - 60px);
-	width: calc(88vw - 60px);
-	margin: 0 auto;
-	position: relative;
-	top: 10vh;
-	padding: 30px;
-	background: #fff;
-}
-
-.download .worddata #download_backBtn {
-	background: var(--deep);
-	color: #fff;
-	display: inline-block;
-	font-size: 30px;
-	line-height: 40px;
-	width: 40px;
-	height: 40px;
-	text-align: center;
-	vertical-align: text-top;
-	margin-top: 4px;
-	margin-right: 20px;
-}
-
-.download .worddata h1 {
-	font-size: 40px;
-}
 
 .download .worddata ul {
 	list-style: none;
@@ -556,7 +475,7 @@
 	font-size: 20px;
 }
 
-.download_right #download_submitBtn {
+.download_right #download_submiAtBtn {
 	background: var(--deep);
 	color: #fff;
 	display: inline-block;
@@ -568,4 +487,52 @@
 	margin-right: 20px;
 	padding: 0 20px;
 	cursor: pointer;
+}
+.page li div.dego{
+	background: radial-gradient(#252283,#272936);
+}
+.dego{
+	overflow: hidden;
+}
+.dego h1{
+	color: #fff;
+	font-family: nihongo;
+	font-size: 10px;
+	text-shadow: #5fbac8 0 0 5px;
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	white-space: nowrap;
+}
+.dego h1.started{
+	transition: all 10s linear;
+	font-size:200px;
+	text-shadow: #c85757 0 0 5px;
+	color:#ff575a;
+}
+.dego input{
+	font-size: 20px;
+	width: 300px;
+	background: #ffffff33;
+	position: absolute;
+	left: 50%;
+	bottom: 10%;
+	margin-left: -170px;
+	color:#ffffffaa;
+	padding: 5px 20px;
+	text-align: center;
+}
+.dego img{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	max-height: 100vh;
+	max-width: 100vw;
+	display: none;
+}
+.dego img.show{
+	display: block;
 }

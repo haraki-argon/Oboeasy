@@ -20,13 +20,15 @@ wap_callback[2] = (() => {
 
 function task_show(title) {
 	$(".tasklist .tasks ul").html("")
-	$(".tasklist .tasks>h1").html(`<span id="tasks_backBtn" onclick='wap(2)'><</span>${title}-課題　<button id="newTaskBtn" onclick='new_task("${title}")'>+新規</button
->`)
+	$(".tasklist .panel h1 .replacement").text(title+'-課題')
+	$(".tasklist .panel h1 #newTaskBtn")[0].onclick=()=>{new_task(title)}
+	$(".tasklist .panel h1 #gameBtn")[0].onclick=()=>{wap(7);degoList(title)}
 	task_list[title].forEach((x, n) => {
 		$(".tasklist .tasks ul").append(
 			`<li>
 			<div onclick="goon_task('${title}',${n})">
 				<h2>${x.task_title}</h2>
+				<button class="modifyTaskBtn" onclick="modify_task('${title}',${n})">情報編集</button>
 				<div class="info">
 					<h3>単語数 <span class="word_number">${x.content.length}</span></h3>
 					<h3>習熟度 <span class="mastery">${mastery_v(get_task_list(title,n))}</span></h3>
@@ -115,4 +117,9 @@ function new_task(title) {
 	}
 
 	wap(4)
+}
+
+function modify_task(title,n){
+	event.stopPropagation()
+	wap(6)
 }
