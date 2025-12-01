@@ -497,7 +497,7 @@
 .dego h1{
 	color: #fff;
 	font-family: nihongo;
-	font-size: 10px;
+	font-size: 20px;
 	text-shadow: #5fbac8 0 0 5px;
 	text-align: center;
 	position: absolute;
@@ -505,6 +505,7 @@
 	top: 50%;
 	transform: translate(-50%,-50%);
 	white-space: nowrap;
+	user-select: none;
 }
 .dego h1.started{
 	transition: all 10s linear;
@@ -535,4 +536,56 @@
 }
 .dego img.show{
 	display: block;
+}
+.dego .kaisetsu{
+	width: 30vw;
+	height: 16vh;
+	background: #00000066;
+	display: flex;
+	border-radius: 10px;
+	position: absolute;
+	left: 50%;
+	bottom: 20%;
+	transform: translateX(-50%);
+}
+.dego .kaisetsu p{
+	color: #fff;
+	font-size: 20px;
+}
+.dego .kaisetsu p.ks_word{
+	font-size: 30px;
+	font-family: nihongo;
+}
+.dego .kaisetsu .box{
+	flex: 1;
+	padding: 20px;
+}
+.dego .backBtn{
+	font-size: 40px;
+	background: #ffffff99;
+	padding: 5px 13px;
+	height: 40px;
+	line-height: 40px;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	cursor: pointer;
+}
+.dego .score{
+	width: auto;
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+	opacity: 0.6;
+}
+.dego .score span{
+	color:#fff;
+	font-size: 20px;
+}
+.dego .score span.c_sekkai{
+	color: var(--good);
+}
+.dego .score span.c_fusekkai{
+	color: var(--bad);
 }

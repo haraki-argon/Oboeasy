@@ -4,6 +4,11 @@
 		"detail":"手动收录了部分N3红宝书词汇",
 		"word_number":30,
 		"filename":"n3.json"
+	},{
+		"title":"N5単語",
+		"detail":"N5词汇",
+		"word_number":1124,
+		"filename":"n5.json"
 	},
 	{
 		"title":"第17課",
