@@ -16,8 +16,10 @@ function degoWord(word) {
 			if (reason == 'correct') {
 				playOneShotAnimation();
 				sekkai_cnt++
+				word.pt++
 			}else{
 				fusekkai_cnt++
+				word.pt--
 			}
 			$('.dego .score span.sekkai').text(sekkai_cnt)
 			$('.dego .score span.fusekkai').text(fusekkai_cnt)
